@@ -28,7 +28,7 @@ export class GalleryComponent implements OnInit {
   public isShadowEnabled: boolean = false;
   public isZoomEnabled: boolean = false;
 
-  public selectedFilter: string = 'none';  // Default filter is no filter
+  public selectedFilter: string = 'none'; 
 
   constructor(private dataServiceObj: DataService) {}
 
@@ -46,7 +46,7 @@ export class GalleryComponent implements OnInit {
   public openImageModal(product: Product) {
     if (product) {  
       this.selectedProduct = product;
-      this.isAnimationEnabled = true;  // Trigger animation when image opens
+      this.isAnimationEnabled = true;
     } else {
       console.error('Product is null or undefined.');
     }
@@ -58,12 +58,12 @@ export class GalleryComponent implements OnInit {
 
   public toggleFitMode() {
     this.isFitMode = !this.isFitMode;
-    this.isFullscreenMode = false; // Ensure fit mode and fullscreen don't overlap
+    this.isFullscreenMode = false;
   }
 
   public toggleFullscreenMode() {
     this.isFullscreenMode = !this.isFullscreenMode;
-    this.isFitMode = false; // Ensure fullscreen and fit mode don't overlap
+    this.isFitMode = false; 
   }
 
   public toggleAnimation() {
@@ -83,6 +83,6 @@ export class GalleryComponent implements OnInit {
   }
 
   public toggleZoom() {
-    this.isZoomEnabled = !this.isZoomEnabled;  // Toggle zoom effect
+    this.isZoomEnabled = !this.isZoomEnabled; 
   }
 }
