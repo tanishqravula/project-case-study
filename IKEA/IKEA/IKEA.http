@@ -1,0 +1,6 @@
+@IKEA_HostAddress = http://localhost:5133
+
+GET {{IKEA_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
