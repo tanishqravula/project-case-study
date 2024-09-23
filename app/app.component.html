@@ -1,0 +1,37 @@
+<body>
+<app-navbar></app-navbar>
+<br>
+<br>
+<div class="product-container">
+  <div class="product-image">
+    <img [src]="product.imageUrl" alt="{{product.name}}">
+  </div>
+  <div class="product-details">
+    <h1>{{product.name}}</h1>
+    <p>Category:{{product.category}}</p>
+    <h2>${{product.price}}</h2>
+    <p class="product-price">Price incl. of all taxes</p>
+    <div class="emi-details">
+      <div class="rating">
+        <span>★★★★☆</span>
+        <span>(21)</span>
+      </div>
+      <p>5 years warranty</p>
+    
+    <div class="add-to-bag">
+      <button class="quantity-btn">-</button>
+      <span class="quantity">1</span>
+      <button class="quantity-btn">+</button>
+      <button class="add-to-bag-btn">Add to bag</button>
+    </div>
+    <p>{{product.description}}</p>
+    <h4>More About the Product</h4>
+    <p><i class="bi bi-info-circle"></i>Seat cushions filled with high resilience foam and polyester fibre wadding give comfortable support for your body, and easily regain their shape when you get up.You get an even surface to sleep on since the seat comes as a single piece.
+      The storage space under the seat has room for pillows and throws.</p>
+  </div>
+</div>
+<br>
+<br>
+</div>
+<app-footer></app-footer>
+

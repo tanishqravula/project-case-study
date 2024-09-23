@@ -1,0 +1,78 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+  }
+.product-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* Adjust the gap as needed */
+  }
+  
+  .product-image img {
+    width: 550px;
+    height: 550px;
+  }
+  
+  .product-details {
+   
+    width: 100%;
+    height: auto;
+    padding-top: 0px;
+    text-justify: inherit;
+  }
+  
+  .product-details h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .product-details h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .product-price {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .emi-details {
+    margin: 10px 0;
+  }
+  
+  .in-store-option {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .in-store-option img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .add-to-bag {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-btn {
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .quantity {
+    margin: 0 10px;
+  }
+  
+  .add-to-bag-btn {
+    background-color: #0058a3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
