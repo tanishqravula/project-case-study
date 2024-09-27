@@ -1,0 +1,41 @@
+  
+  .product-card {
+    border:   white;
+   
+    padding: 20px;
+    background-color: #fff;
+   
+    border-color: white;
+ 
+  }
+ 
+  .product-image {
+    width:350px;
+    height: 300px;
+    border-color: black;
+}
+   
+ 
+  .product-details {
+    margin-top: 10px;
+    font-family: 'Noto Sans', sans-serif;
+   
+   
+  }
+ 
+  .product-actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .price{
+    font-size: x-large;
+    font-weight: bolder;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    border-color: white;
+    background-color: white;
+  }

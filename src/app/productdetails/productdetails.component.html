@@ -1,0 +1,28 @@
+<div class="product-details-container">
+  <h3>Products by Category</h3>
+  
+  <div class="category-dropdown">
+    <label for="category-select">Filter by Category:</label>
+    <select id="category-select" [(ngModel)]="selectedCategory" (change)="onCategoryChange($event)" class="category-select">
+      <option value="">All Categories</option>
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+  </div>
+
+  <div class="search-bar">
+    <input [(ngModel)]="searchTerm" (input)="searchProduct()" placeholder="Search products..." class="search-input" />
+  </div>
+
+  <div class="product-grid">
+    <div *ngFor="let product of filteredProducts" class="product-card">
+      <img [src]="product.url" alt="Product Image" class="product-image"/>
+      <div class="product-details">
+        <p style="font-weight: bolder;"><strong></strong> {{ product.productName | titlecase}}</p>
+        <p><strong>Description:</strong> {{ product.description }}</p>
+        <p class="price"><strong></strong> {{ product.unitPrice | currency:'INR' }}</p>
+        <p><strong>Category:</strong> {{ product.category }}</p>
+        <p><strong>Stock Quantity:</strong> {{ product.quantity }}</p>
+      </div>
+    </div>
+  </div>
+</div>

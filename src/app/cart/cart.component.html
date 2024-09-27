@@ -1,0 +1,23 @@
+
+<div *ngIf="cartItems.length === 0" class="empty-cart" style="text-align: center; padding: 20px; background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 10px;">
+  <p style="font-size: 18px; color: #555;">Your cart is empty!</p>
+  <img src="https://www.ikea.com/in/en/shoppingcart/assets/frakta-bag-D52_GDvj.png" style="width: 150px; height: auto; margin-top: 10px;">
+</div>
+
+  <div *ngIf="cartItems.length > 0" class="cart-container">
+    <h3>Your Cart Items</h3>
+    <div class="product-grid">
+      <div *ngFor="let item of cartItems" class="product-card">
+        <img [src]="item.url" alt="{{ item.productName }}" class="product-image" />
+        <div class="product-details">
+          <p style="font-weight: bolder;"><strong></strong> {{ item.productName | titlecase }}</p>
+          <p><strong>Description:</strong> {{ item.description }}</p>
+          <p class="price"><strong></strong> {{ item.unitPrice | currency:'INR' }}</p>
+          <p><strong>Stock Quantity:</strong> {{ item.quantity }}</p>
+          <button class="remove-btn" (click)="removeItem(item.cartItemId)">Remove</button>
+        </div>
+      </div>
+    </div>
+    <button class="checkout-btn" (click)="checkout()">Checkout</button>
+  </div>
+  

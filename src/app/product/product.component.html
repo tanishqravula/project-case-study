@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .text {
+            display: flex;
+            align-items: center;
+            gap: 1px; /* Adjust the gap as needed */
+        }
+
+        .ikea-logo {
+            width: 50px; /* Adjust the width as needed */
+            height: auto;
+        }
+
+        .text h1 {
+            margin: 0;
+        }
+
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            border-color: white;
+        }
+
+        .product-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        .form-input {
+            flex: 1 1 calc(33.333% - 10px);
+            padding: 10px;
+            margin-bottom: 10px;
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        .form-button {
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            background-color: #0057AD;
+            color: white;
+            border-radius: 50px;
+            border-color: black;
+            cursor: pointer;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Ensure 4 columns */
+            gap: 20px;
+            border-color: white;
+            background-color: white;
+        }
+
+        .product-card {
+            border: white;
+            padding: 20px;
+            background-color: #fff;
+            border-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .product-card:hover {
+            background-color: ghostwhite;
+            cursor: pointer;
+        }
+
+        .product-image {
+            width: 200px;
+            height: 200px;
+        }
+
+        .product-details {
+            margin-top: 10px;
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        .product-actions {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .price {
+            font-size: x-large;
+            font-weight: bolder;
+        }
+
+        .btn-edit, .btn-delete {
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            border-radius: 50px;
+        }
+
+        .btn-edit {
+            background-color: #0057AD;
+            color: white;
+            border-radius: 50px;
+        }
+
+        .btn-delete {
+            background-color: white;
+            color: black;
+            border-color: black;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <h3>Welcome to Products Page</h3>
+        <hr/>
+
+        <div class="product-form">
+            <input [(ngModel)]="productName" placeholder="Product Name" class="form-input" />
+            <input [(ngModel)]="unitPrice" placeholder="Unit Price" class="form-input" />
+            <input [(ngModel)]="quantity" placeholder="Quantity" class="form-input" />
+            <input [(ngModel)]="category" placeholder="Category" class="form-input" />
+            <input [(ngModel)]="description" placeholder="Description" class="form-input" />
+            <input [(ngModel)]="url" placeholder="Image URL" class="form-input" />
+        </div>
+
+        <div class="button-group">
+            <input type="button" value="Get Products" (click)="getDataButtonClick()" class="form-button" />
+            <input type="button" value="Add Product" (click)="addButtonClick()" class="form-button" />
+            <input type="button" value="Update Product" (click)="updateButtonClick()" class="form-button" />
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card" *ngFor="let item of productsArray">
+                <img [src]="item.url" alt="Product Image" class="product-image">
+                <div class="product-details">
+                    <h4>{{item.productName}}</h4>
+                    <p class="price">${{item.unitPrice}}</p>
+                    <p>Quantity: {{item.quantity}}</p>
+                    <p>Category: {{item.category}}</p>
+                </div>
+                <div class="product-actions">
+                    <button (click)="selectClick(item.productId)" class="btn-edit">Select</button>
+                    <button (click)="deleteClick(item.productId)" class="btn-delete">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

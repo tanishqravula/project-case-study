@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="row d-flex align-items-center">
+    <div class="col-md-6 p-0">
+      <img src="Login.jpg" class="img-fluid" alt="Signup Image"/>
+    </div>
+
+
+
+<div class="form-container">
+  <h2>Signup</h2>
+  <form>
+    <label for="userName">Username:</label>
+    <input type="text" id="userName" [(ngModel)]="userName" name="userName" required />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" [(ngModel)]="email" name="email" required />
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" [(ngModel)]="password" name="password" required />
+    <li>Password must contain at least one special character</li>
+
+    <label for="address">Address:</label>
+    <textarea id="address" [(ngModel)]="address" name="address" rows="4" required></textarea>
+    <li>Address must be at least 20 characters long</li>
+    <button type="button" (click)="addButtonClick()">Signup</button>
+  </form>
+  <p>Already have an account? <a routerLink="/login">Login here</a></p>
+</div>
+</div>
+</div>

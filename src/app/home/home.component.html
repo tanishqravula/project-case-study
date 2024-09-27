@@ -1,0 +1,25 @@
+<div class="container">
+	<div class="row mb-4">
+	  <div class="col-md-12">
+		<input type="text" class="form-control" placeholder="Search for products..." [(ngModel)]="searchTerm" (input)="searchProduct()">
+	  </div>
+	</div>
+  
+	<div class="product-grid">
+	  <div class="product-card" *ngFor="let product of filteredProducts">
+		<img [src]="product.url" class="product-image" alt="Product Image" />
+		<div class="product-details">
+		  <p style="font-weight: bolder;"><strong></strong> {{ product.productName }}</p>
+		  <p><strong></strong> {{ product.description }}</p>
+		  <p class="price"><strong></strong> {{ product.unitPrice | currency:'INR' }}</p>
+		  <p><strong>Category:</strong> {{ product.category }}</p>
+		  <p><strong>Stock Quantity:</strong> {{ product.quantity }}</p>
+
+		  <input type="number" [(ngModel)]="product.selectedQuantity" min="1" [max]="product.quantity" />
+		  
+		  <button class="btn btn-success" (click)="addToCart(product)">Add to Cart</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+  
