@@ -4,18 +4,18 @@
 
     <div class="profile-detail">
         <span class="profile-label">userName:</span>
-        <span class="profile-value">jonty rhodes</span>
+        <span class="profile-value">{{ user?.userName }}</span>
     </div>
 
     <div class="profile-detail">
         <span class="profile-label">Email:</span>
-        <span class="profile-value">{{this.email}}</span>
+        <span class="profile-value">{{ user?.email }}</span>
     </div>
 
     <div class="profile-detail">
         <span class="profile-label">Addresses:</span>
         <div id="addressList" class="address-list">
-            <div class="address-item">southafrica</div>
+            <div class="address-item">{{ user?.address }}</div>
         </div>
     </div>
 </div>
