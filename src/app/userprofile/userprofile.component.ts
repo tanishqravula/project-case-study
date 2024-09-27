@@ -14,7 +14,6 @@ import { AuthService } from '../auth.service';
 })
 export class UserprofileComponent implements OnInit {
   public user: User | null = null;
-  public email:string ="jonytrhodes@gmail.com";
   constructor(
     private userserviceobj: UserserviceService,
     private authService: AuthService
